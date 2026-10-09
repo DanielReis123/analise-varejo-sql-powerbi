@@ -1,0 +1,17 @@
+-- Importe fato_vendas.csv e metas.csv. Relacione uma dimensão de lojas e calendário;
+-- veja instruções no README antes de criar os visuais.
+Receita = SUM(fato_vendas[receita])
+
+Lucro Bruto = SUM(fato_vendas[lucro_bruto])
+
+Margem % = DIVIDE([Lucro Bruto], [Receita])
+
+Pedidos = DISTINCTCOUNT(fato_vendas[pedido_id])
+
+Ticket Médio = DIVIDE([Receita], [Pedidos])
+
+Itens Vendidos = SUM(fato_vendas[quantidade])
+
+Meta Receita = SUM(metas[meta_receita])
+
+Atingimento % = DIVIDE([Receita], [Meta Receita])
